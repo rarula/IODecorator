@@ -8,13 +8,11 @@
 #           対象の引数の名前
 #       value: any
 #           対象の引数
-#       optional?: boolean
-#           (任意) 引数が省略できるかどうか
-#       any?: AnyPredicate[]
-#           (任意) 指定する条件のリスト
-#               リストに含まれる条件のどれか一つでも合致すれば合格とする
 #
-# `storage iodeco: in.any` を指定しない場合、以下の内から1つの条件を指定してください
+# @input
+#   storage iodeco: in
+#       any: string[]
+#           期待されている型のリスト
 #
 # @input
 #   storage iodeco: in
@@ -48,7 +46,7 @@
 # @output
 #   storage iodeco: out
 #       success: boolean
-#           検証の成否 (検証が成功した場合は `true`、それ以外の場合は `false`)
+#           検証の成否 (条件に合致した場合は `true`、それ以外の場合は `false`)
 #       errorList: Error[]
 #           発生したエラーのリスト
 #
