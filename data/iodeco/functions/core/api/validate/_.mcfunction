@@ -2,10 +2,39 @@
 #
 # @input
 #   storage iodeco: in
+#       name: string
 #       value: any
-#       optional?: boolean
-#       byte?: BytePredicate
-#       short?: ShortPredicate
+#       any: NBTType[]
+#
+# @output
+#   storage iodeco: out
+#       success: boolean
+#       errorList: Error[]
+#       type: NBTType
+#
+#
+# @input
+#   storage iodeco: in
+#       name: string
+#       value: any
+#       boolean: BooleanPredicate
+#       byte: BytePredicate
+#       short: ShortPredicate
+#       int: IntPredicate
+#       long: LongPredicate
+#       float: FloatPredicate
+#       double: DoublePredicate
+#       byteArray: ByteArrayPredicate
+#       string: StringPredicate
+#       list: ListPredicate
+#       compound: CompoundPredicate
+#       intArray: IntArrayPredicate
+#       longArray: LongArrayPredicate
+#
+# @output
+#   storage iodeco: out
+#       success: boolean
+#       errorList: Error[]
 #
 # @within function iodeco:api/validate
 
@@ -20,12 +49,12 @@
     data modify storage iodeco: out.success set value true
 
 
-# 指定された条件が要素を含んだリストである -> それぞれ条件を解析する
-    execute if data storage iodeco: in.any[0] run function iodeco:core/api/validate/any
+# any -> いずれかの型と一致するか検証する
+    execute if data storage iodeco: in.any[] run function iodeco:core/api/validate/any/_
 
-# 指定された条件が要素を含んだリストでない -> 条件を解析する
-    execute unless data storage iodeco: in.any[0] run data modify storage iodeco:core Input set from storage iodeco: in
-    execute unless data storage iodeco: in.any[0] run function iodeco:core/api/validate/predicate/_
+# predicate -> 条件を解析する
+    execute unless data storage iodeco: in.any[] run data modify storage iodeco:core Input set from storage iodeco: in
+    execute unless data storage iodeco: in.any[] run function iodeco:core/api/validate/predicate/_
 
 
 # リセット
