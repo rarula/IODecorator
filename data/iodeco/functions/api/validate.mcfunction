@@ -1,6 +1,6 @@
 #> iodeco:api/validate
 #
-# 引数が指定された条件に合致するかを検証します
+# 引数が指定された条件に合致するかどうかを検証します
 #
 # @input
 #   storage iodeco: in
@@ -8,40 +8,32 @@
 #           対象の引数の名前
 #       value: any
 #           対象の引数
-#
-# @input
-#   storage iodeco: in
-#       any: string[]
-#           期待されている型のリスト
-#
-# @input
-#   storage iodeco: in
 #       boolean: BooleanPredicate
-#           boolean型として指定する条件
+#           (いずれか) boolean型として指定する条件
 #       byte: BytePredicate
-#           byte型として指定する条件
+#           (いずれか) byte型として指定する条件
 #       short: ShortPredicate
-#           short型として指定する条件
+#           (いずれか) short型として指定する条件
 #       int: IntPredicate
-#           int型として指定する条件
+#           (いずれか) int型として指定する条件
 #       long: LongPredicate
-#           long型として指定する条件
+#           (いずれか) long型として指定する条件
 #       float: FloatPredicate
-#           float型として指定する条件
+#           (いずれか) float型として指定する条件
 #       double: DoublePredicate
-#           double型として指定する条件
+#           (いずれか) double型として指定する条件
 #       byteArray: ByteArrayPredicate
-#           byteArray型として指定する条件
+#           (いずれか) byteArray型として指定する条件
 #       string: StringPredicate
-#           string型として指定する条件
+#           (いずれか) string型として指定する条件
 #       list: ListPredicate
-#           list型として指定する条件
+#           (いずれか) list型として指定する条件
 #       compound: CompoundPredicate
-#           compound型として指定する条件
+#           (いずれか) compound型として指定する条件
 #       intArray: IntArrayPredicate
-#           intArray型として指定する条件
+#           (いずれか) intArray型として指定する条件
 #       longArray: LongArrayPredicate
-#           longArray型として指定する条件
+#           (いずれか) longArray型として指定する条件
 #
 # @output
 #   storage iodeco: out

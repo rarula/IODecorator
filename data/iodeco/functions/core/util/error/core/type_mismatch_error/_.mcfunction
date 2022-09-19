@@ -20,10 +20,7 @@
     data modify storage iodeco:temp Error.detail set from storage iodeco:util in.Detail
     data modify storage iodeco:temp Error.detail.expectedType set from storage iodeco:util in.ExpectedType
     data modify storage iodeco:temp Error.detail.receivedType set from storage iodeco:util in.ReceivedType
-
-# 戻り値を設定する
-    data modify storage iodeco:util out.Error set from storage iodeco:temp Error
+    function iodeco:core/util/error/core/build
 
 # リセット
-    data remove storage iodeco:temp Error
     data remove storage iodeco:util in

@@ -15,7 +15,7 @@
 #       Checked: boolean
 #           検証済みかどうか
 #
-# @within function iodeco:core/api/validate/predicate/predicates/*/check_type
+# @within function iodeco:core/api/validate/predicate/types/*/check_type
 
 # 一致するかを検証し、結果を反転する
     execute store success storage iodeco:temp Matched byte 1.0 run data modify storage iodeco:temp Type set from storage iodeco:core ReceivedType

@@ -2,9 +2,9 @@
 #
 # @input
 #   storage iodeco:core Args
-#       not?: NBTCompound
+#       not?: compound
 #
-# @within function iodeco:core/api/validate/predicate/predicates/*/_
+# @within function iodeco:core/api/validate/predicate/types/*/_
 
 # 条件が反転するかどうかフラグを立てる
     execute store success storage iodeco:core Not byte 1.0 if data storage iodeco:core Args.not

@@ -13,11 +13,15 @@
     execute if data storage iodeco:core {Optional:true} run data modify storage iodeco:core Args set from storage iodeco:core Input.optional
 
 
+# 検証前にフラグを立てておく
+    data modify storage iodeco: out.success set value true
+
+
 # 条件との合致を検証する
     data modify storage iodeco:core Inverted set value false
     data modify storage iodeco:core Checked set value false
-    execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.byte run function iodeco:core/api/validate/predicate/predicates/byte/check_type
-    execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.short run function iodeco:core/api/validate/predicate/predicates/short/check_type
+    execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.byte run function iodeco:core/api/validate/predicate/types/byte/check_type
+    execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.short run function iodeco:core/api/validate/predicate/types/short/check_type
 
 
 # リセット

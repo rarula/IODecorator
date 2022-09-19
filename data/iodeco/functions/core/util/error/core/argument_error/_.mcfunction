@@ -13,10 +13,7 @@
     data modify storage iodeco:temp Error.message set from storage iodeco:util in.Message
     data modify storage iodeco:temp Error.nbtName set from storage iodeco:util in.Name
     data modify storage iodeco:temp Error.detail set from storage iodeco:util in.Detail
-
-# 戻り値を設定する
-    data modify storage iodeco:util out.Error set from storage iodeco:temp Error
+    function iodeco:core/util/error/core/build
 
 # リセット
-    data remove storage iodeco:temp Error
     data remove storage iodeco:util in
