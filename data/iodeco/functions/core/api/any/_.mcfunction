@@ -32,6 +32,7 @@
 # 検証に失敗 -> TypeMismatchError を発生させる
     execute if data storage iodeco: out{success:false} run function iodeco:core/api/any/fail
 
+
 # リセット
     data remove storage iodeco:core ReceivedType
     data remove storage iodeco:temp Types
