@@ -9,7 +9,8 @@
     execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco: out.byte.not.oneOf set from storage iodeco:core BasePredicate.oneOf
     data remove storage iodeco:core BasePredicate
 
-# not (BasePredicate)
+
+# not
     function iodeco:core/api/validate/predicate/common/base/not
 
 # 以降の条件を反転して検証する
