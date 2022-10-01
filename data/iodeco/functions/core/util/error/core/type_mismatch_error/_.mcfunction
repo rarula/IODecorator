@@ -15,7 +15,7 @@
 
 # エラーを組み立てる
     data modify storage iodeco:temp Error.name set value "TypeMismatchError"
-    data modify storage iodeco:temp Error.message set value '[{"text":"", "color":"red"}, {"translate":"Expected type of \'%1$s\' is \'%2$s\', but received type is \'%3$s\'.", "with":[{"storage":"iodeco:core", "nbt":"Error.nbtName"}, {"storage":"iodeco:core", "nbt":"Error.detail.expectedType", "interpret":true}, {"storage":"iodeco:core", "nbt":"Error.detail.receivedType"}]}]'
+    data modify storage iodeco:temp Error.message set value '{"color":"red", "translate":"Expected type of \'%1$s\' is \'%2$s\', but received type is \'%3$s\'.", "with":[{"storage":"iodeco:", "nbt":"error.nbtName"}, {"storage":"iodeco:", "nbt":"error.detail.expectedType", "interpret":true}, {"storage":"iodeco:", "nbt":"error.detail.receivedType"}]}'
     data modify storage iodeco:temp Error.nbtName set from storage iodeco:util in.Name
     data modify storage iodeco:temp Error.detail set from storage iodeco:util in.Detail
     data modify storage iodeco:temp Error.detail.expectedType set from storage iodeco:util in.ExpectedType

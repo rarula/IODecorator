@@ -6,7 +6,7 @@
     #declare score_holder $Length
 
 # エラーメッセージを設定する
-    data modify storage iodeco:util in.Detail.arrayInfo set value '{"color":"red", "translate":", ... %1$s more", "with":[{"storage":"iodeco:core", "nbt":"Error.detail.arrayLength"}]}'
+    data modify storage iodeco:util in.Detail.arrayInfo set value '{"color":"red", "translate":", ... %1$s more", "with":[{"storage":"iodeco:", "nbt":"error.detail.arrayLength"}]}'
 
 # 要素の表示を省略する
     execute store result score $Length IODecorator if data storage iodeco:core Args.oneOf[]

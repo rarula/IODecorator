@@ -2,17 +2,13 @@
 #
 # @input
 #   storage iodeco: in
-#       error: Error
+#       errorList: Error[]
 #
 # @within function iodeco:api/throw
-
-# エラーのリストをコピーしておく
-    data modify storage iodeco:temp ErrorList set from storage iodeco: in.errorList
 
 # 全てのエラーを出力する
     function iodeco:core/api/throw/loop
 
 # リセット
-    data remove storage iodeco:temp ErrorList
-    data remove storage iodeco:core Error
+    data remove storage iodeco: error
     data remove storage iodeco: in
