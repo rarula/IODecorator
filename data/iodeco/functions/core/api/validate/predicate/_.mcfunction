@@ -1,7 +1,5 @@
 #> iodeco:core/api/validate/predicate/_
-# @within function
-#   iodeco:core/api/validate/_
-#   iodeco:core/api/validate/any
+# @within function iodeco:core/api/validate/_
 
 # 引数が省略できるかどうかフラグを立てる
     execute store success storage iodeco:core Optional byte 1.0 if data storage iodeco:core Input.optional
