@@ -21,6 +21,7 @@
 # @output
 #   storage iodeco: out
 #       success: boolean
+#       error: Error
 #       boolean: BooleanResult
 #       byte: ByteResult
 #       short: ShortResult

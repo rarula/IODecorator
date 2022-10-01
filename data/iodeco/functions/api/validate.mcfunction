@@ -39,6 +39,8 @@
 #   storage iodeco: out
 #       success: boolean
 #           検証の成否 (条件に合致した場合は `true`、それ以外の場合は `false`)
+#       error: Error
+#           発生したエラー
 #       boolean: BooleanResult
 #           (いずれか) boolean型として検証した結果
 #       byte: ByteResult
