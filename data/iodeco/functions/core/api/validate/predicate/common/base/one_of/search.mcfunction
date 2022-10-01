@@ -11,4 +11,4 @@
     execute if data storage iodeco:temp {Result:true} run data remove storage iodeco:temp Array[-1]
 
 # 値が一致するか、全てを探索し終えるまで再帰
-    execute if data storage iodeco:temp {Result:true} if data storage iodeco:temp Array[-1] run function iodeco:core/api/validate/predicate/common/base/one_of/search
+    execute if data storage iodeco:temp {Result:true} if data storage iodeco:temp Array[0] run function iodeco:core/api/validate/predicate/common/base/one_of/search
