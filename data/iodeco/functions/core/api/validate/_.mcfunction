@@ -37,19 +37,23 @@
 #
 # @within function iodeco:api/validate
 
-# 引数の型を取得する
-    data modify storage iodeco:util in.NBT set from storage iodeco: in.value
-    function iodeco:core/util/nbt/get_type
-    data modify storage iodeco:core ReceivedType set from storage iodeco:util out.NBTType
-    function iodeco:core/util/cleanup
+# 引数が省略できるかどうかフラグを立てる
+    execute store success storage iodeco:core Optional byte 1.0 if data storage iodeco: in.optional
+
+# 検証前にフラグを立てておく
+    data modify storage iodeco: out.success set value true
 
 
-# 条件を解析する
-    data modify storage iodeco:core Input set from storage iodeco: in
-    function iodeco:core/api/validate/predicate/_
+# 引数が設定されていない -> ArgumentError を発生させる
+    execute unless data storage iodeco: in.value run function iodeco:core/api/validate/fail
+
+# 引数が設定されている -> 条件を解析する
+    execute if data storage iodeco: in.value if data storage iodeco:core {Optional:false} run data modify storage iodeco:core Args set from storage iodeco: in
+    execute if data storage iodeco: in.value if data storage iodeco:core {Optional:true } run data modify storage iodeco:core Args set from storage iodeco: in.optional
+    execute if data storage iodeco: in.value run function iodeco:core/api/validate/predicate/_
 
 
 # リセット
-    data remove storage iodeco:core ReceivedType
-    data remove storage iodeco:core Input
+    data remove storage iodeco:core Optional
+    data remove storage iodeco:core Args
     data remove storage iodeco: in

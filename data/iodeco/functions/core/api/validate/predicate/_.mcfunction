@@ -1,18 +1,11 @@
 #> iodeco:core/api/validate/predicate/_
 # @within function iodeco:core/api/validate/_
 
-# 引数が省略できるかどうかフラグを立てる
-    execute store success storage iodeco:core Optional byte 1.0 if data storage iodeco:core Input.optional
-
-# 引数が省略できない -> 引数をコピーする
-    execute if data storage iodeco:core {Optional:false} run data modify storage iodeco:core Args set from storage iodeco:core Input
-
-# 引数が省略できる -> optional以降の引数をコピーする
-    execute if data storage iodeco:core {Optional:true} run data modify storage iodeco:core Args set from storage iodeco:core Input.optional
-
-
-# 検証前にフラグを立てておく
-    data modify storage iodeco: out.success set value true
+# 引数の型を取得する
+    data modify storage iodeco:util in.NBT set from storage iodeco: in.value
+    function iodeco:core/util/nbt/get_type
+    data modify storage iodeco:core ReceivedType set from storage iodeco:util out.NBTType
+    function iodeco:core/util/cleanup
 
 
 # 条件との合致を検証する
@@ -23,8 +16,7 @@
 
 
 # リセット
-    data remove storage iodeco:core Optional
-    data remove storage iodeco:core Args
+    data remove storage iodeco:core ReceivedType
     data remove storage iodeco:core Inverted
     data remove storage iodeco:core Checked
     data remove storage iodeco:core Not
