@@ -1,17 +1,13 @@
 #> iodeco:core/api/validate/predicate/common/base/one_of/_
-#
-# 対象の引数が配列に含まれるかどうかを検証する
-#
 # @within function iodeco:core/api/validate/predicate/common/base/_
 
 # 検証前にフラグを立てておく
     data modify storage iodeco:core BasePredicate.oneOf.success set value true
 
 
-# 値が含まれているか探索する
+# 対象の引数が配列に含まれているか検証する
     data modify storage iodeco:temp Array set from storage iodeco:core Args.oneOf
     function iodeco:core/api/validate/predicate/common/base/one_of/search
-
 
 # 検証に成功したかどうかフラグを立てる
     execute store success storage iodeco:temp Success byte 1.0 if data storage iodeco:temp Array[0]
