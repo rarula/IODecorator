@@ -4,6 +4,10 @@
 #
 # @within function iodeco:core/api/validate/predicate/common/base/_
 
+# 検証前にフラグを立てておく
+    data modify storage iodeco:core BasePredicate.oneOf.success set value true
+
+
 # 値が含まれているか探索する
     data modify storage iodeco:temp Array set from storage iodeco:core Args.oneOf
     function iodeco:core/api/validate/predicate/common/base/one_of/search

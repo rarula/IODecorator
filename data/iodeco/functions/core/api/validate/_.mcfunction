@@ -21,7 +21,19 @@
 # @output
 #   storage iodeco: out
 #       success: boolean
-#       errorList: Error[]
+#       boolean: BooleanResult
+#       byte: ByteResult
+#       short: ShortResult
+#       int: IntResult
+#       long: LongResult
+#       float: FloatResult
+#       double: DoubleResult
+#       byteArray: ByteArrayResult
+#       string: StringResult
+#       list: ListResult
+#       compound: CompoundResult
+#       intArray: IntArrayResult
+#       longArray: LongArrayResult
 #
 # @within function iodeco:api/validate
 

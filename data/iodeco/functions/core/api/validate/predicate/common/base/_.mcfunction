@@ -4,6 +4,10 @@
 #   storage iodeco:core Args
 #       oneOf?: any[]
 #
+# @output
+#   storage iodeco:core BasePredicate
+#       oneOf?: ValidationResult
+#
 # @within function iodeco:core/api/validate/predicate/types/*/_
 
 # 条件との合致を検証する

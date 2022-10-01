@@ -5,6 +5,9 @@
 
 # BasePredicate
     function iodeco:core/api/validate/predicate/common/base/_
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco: out.byte.oneOf set from storage iodeco:core BasePredicate.oneOf
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco: out.byte.not.oneOf set from storage iodeco:core BasePredicate.oneOf
+    data remove storage iodeco:core BasePredicate
 
 # not (BasePredicate)
     function iodeco:core/api/validate/predicate/common/base/not

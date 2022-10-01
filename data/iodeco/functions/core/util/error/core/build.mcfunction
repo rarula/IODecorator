@@ -19,9 +19,6 @@
 #
 # @within function iodeco:core/util/error/core/*/_
 
-# フラグを下ろす
-    data modify storage iodeco: out.success set value false
-
 # 戻り値を設定する
     data modify storage iodeco:util out.Error set from storage iodeco:temp Error
 

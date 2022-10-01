@@ -26,11 +26,12 @@ data modify storage iodeco:util in.Name set from storage iodeco: in.name
 
 
 # エラーを発生させる
-    function iodeco:core/util/error/argument_error
+    function iodeco:core/api/validate/error/argument_error
 
 
 # 戻り値を設定する
-    data modify storage iodeco: out.errorList append from storage iodeco:util out.Error
+    data modify storage iodeco:core BasePredicate.oneOf.success set value false
+    data modify storage iodeco:core BasePredicate.oneOf.error set from storage iodeco:util out.Error
 
 
 # リセット
