@@ -44,8 +44,8 @@
     data modify storage iodeco: out.success set value true
 
 
-# 引数が設定されていない -> ArgumentError を発生させる
-    execute unless data storage iodeco: in.value run function iodeco:core/api/validate/fail
+# 引数が設定されていない -> 引数が省略できない -> ArgumentError を発生させる
+    execute unless data storage iodeco: in.value if data storage iodeco:core {Optional:false} run function iodeco:core/api/validate/fail
 
 # 引数が設定されている -> 条件を解析する
     execute if data storage iodeco: in.value if data storage iodeco:core {Optional:false} run data modify storage iodeco:core Args set from storage iodeco: in
