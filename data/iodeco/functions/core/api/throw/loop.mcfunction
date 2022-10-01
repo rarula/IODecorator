@@ -11,8 +11,8 @@
 # |  {error.message}
 
 # エラーを出力する
-    tellraw @a [{"color":"red", "text":""},   {"storage":"iodeco:", "nbt":"error.name", "bold":true}]
-    tellraw @a [{"color":"red", "text":"  "}, {"storage":"iodeco:", "nbt":"error.message", "interpret":true}]
+    tellraw @a [{"color":"red", "text":""},  {"storage":"iodeco:", "nbt":"error.name", "bold":true}]
+    tellraw @a [{"color":"red", "text":" "}, {"storage":"iodeco:", "nbt":"error.message", "interpret":true}]
 
 # 全てを出力し終えるまで再帰
     execute if data storage iodeco: in.errorList[0] run function iodeco:core/api/throw/loop
