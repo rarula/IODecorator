@@ -6,7 +6,7 @@
     execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.oneOf.success set value true
 
 
-# 対象の引数が配列に含まれているか検証する
+# 対象の引数が指定された配列に含まれるか検証する
     data modify storage iodeco:temp Array set from storage iodeco:core Args.oneOf
     function iodeco:core/api/validate/predicate/common/base/one_of/search
 
