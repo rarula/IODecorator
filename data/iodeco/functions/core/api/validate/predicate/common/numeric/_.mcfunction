@@ -5,7 +5,7 @@
 #       equal?: Numeric
 #
 # @output
-#   storage iodeco:core NumericPredicate
+#   storage iodeco:core Predicate
 #       equal?: ValidationResult
 #
 # @within function iodeco:core/api/validate/predicate/types/*/_

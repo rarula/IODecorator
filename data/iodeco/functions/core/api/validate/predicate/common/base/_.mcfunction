@@ -5,7 +5,7 @@
 #       oneOf?: any[]
 #
 # @output
-#   storage iodeco:core BasePredicate
+#   storage iodeco:core Predicate
 #       oneOf?: ValidationResult
 #
 # @within function iodeco:core/api/validate/predicate/types/*/_

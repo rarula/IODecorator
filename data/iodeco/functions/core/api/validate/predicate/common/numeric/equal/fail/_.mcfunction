@@ -13,8 +13,10 @@
 
 
 # 戻り値を設定する
-    data modify storage iodeco:core NumericPredicate.equal.success set value false
-    data modify storage iodeco:core NumericPredicate.equal.error set from storage iodeco:util out.Error
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.equal.success set value false
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.equal.error set from storage iodeco:util out.Error
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.equal.success set value false
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.equal.error set from storage iodeco:util out.Error
 
 # リセット
     function iodeco:core/util/cleanup

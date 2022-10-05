@@ -16,8 +16,10 @@
 
 
 # 戻り値を設定する
-    data modify storage iodeco:core BasePredicate.oneOf.success set value false
-    data modify storage iodeco:core BasePredicate.oneOf.error set from storage iodeco:util out.Error
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.oneOf.success set value false
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.oneOf.error set from storage iodeco:util out.Error
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.oneOf.success set value false
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.oneOf.error set from storage iodeco:util out.Error
 
 # リセット
     function iodeco:core/util/cleanup

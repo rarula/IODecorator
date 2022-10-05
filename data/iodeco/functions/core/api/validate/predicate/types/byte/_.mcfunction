@@ -5,15 +5,13 @@
 
 # NumericPredicate
     function iodeco:core/api/validate/predicate/common/numeric/_
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco: out.byte.equal set from storage iodeco:core NumericPredicate.equal
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco: out.byte.not.equal set from storage iodeco:core NumericPredicate.equal
-    data remove storage iodeco:core NumericPredicate
+    data modify storage iodeco: out.byte merge from storage iodeco:core Predicate
+    data remove storage iodeco:core Predicate
 
 # BasePredicate
     function iodeco:core/api/validate/predicate/common/base/_
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco: out.byte.oneOf set from storage iodeco:core BasePredicate.oneOf
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco: out.byte.not.oneOf set from storage iodeco:core BasePredicate.oneOf
-    data remove storage iodeco:core BasePredicate
+    data modify storage iodeco: out.byte merge from storage iodeco:core Predicate
+    data remove storage iodeco:core Predicate
 
 
 # not

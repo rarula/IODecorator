@@ -2,7 +2,8 @@
 # @within function iodeco:core/api/validate/predicate/common/base/_
 
 # 検証前にフラグを立てておく
-    data modify storage iodeco:core BasePredicate.oneOf.success set value true
+    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.oneOf.success set value true
+    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.oneOf.success set value true
 
 
 # 対象の引数が配列に含まれているか検証する
