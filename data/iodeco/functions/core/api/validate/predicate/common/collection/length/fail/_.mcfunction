@@ -13,10 +13,8 @@
 
 
 # 戻り値を設定する
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.length.success set value false
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.length.error set from storage iodeco:util out.Error
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.length.success set value false
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.length.error set from storage iodeco:util out.Error
+    data modify storage iodeco:core ValidationResult.length.success set value false
+    data modify storage iodeco:core ValidationResult.length.error set from storage iodeco:util out.Error
 
 # リセット
     function iodeco:core/util/cleanup

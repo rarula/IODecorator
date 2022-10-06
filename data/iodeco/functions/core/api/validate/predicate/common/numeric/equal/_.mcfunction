@@ -2,8 +2,7 @@
 # @within function iodeco:core/api/validate/predicate/common/numeric/_
 
 # 検証前にフラグを立てておく
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.equal.success set value true
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.equal.success set value true
+    data modify storage iodeco:core ValidationResult.equal.success set value true
 
 
 # 対象の引数と指定された値が一致するか検証する

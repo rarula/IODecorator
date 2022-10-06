@@ -8,8 +8,7 @@
 
 
 # 検証前にフラグを立てておく
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate.minLength.success set value true
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.minLength.success set value true
+    data modify storage iodeco:core ValidationResult.minLength.success set value true
 
 
 # 検証する
