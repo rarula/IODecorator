@@ -5,13 +5,14 @@
     data modify storage iodeco:core ValidationResult.equal.success set value true
 
 
-# 対象の引数と指定された値が一致するか検証する
+# 検証する
     data modify storage iodeco:temp Value set from storage iodeco:core Args.equal
     execute store success storage iodeco:temp Success byte 1.0 run data modify storage iodeco:temp Value set from storage iodeco: in.value
     execute store success storage iodeco:temp Success byte 1.0 if data storage iodeco:temp {Success:false}
 
-# 検証に成功したかどうかフラグを立てる
+# 実際に条件が反転する -> 検証の成否を反転する
     execute if data storage iodeco:core {Inverted:true} store success storage iodeco:temp Success byte 1.0 if data storage iodeco:temp {Success:false}
+
 
 # 検証に失敗 -> ArgumentError を発生させる
     execute if data storage iodeco:temp {Success:false} run function iodeco:core/api/validate/predicate/common/numeric/equal/fail/_
