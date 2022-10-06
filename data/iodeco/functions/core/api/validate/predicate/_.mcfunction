@@ -11,6 +11,7 @@
 # 条件との合致を検証する
     data modify storage iodeco:core Inverted set value false
     data modify storage iodeco:core Checked set value false
+    execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.boolean run function iodeco:core/api/validate/predicate/types/boolean/check_type
     execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.byte run function iodeco:core/api/validate/predicate/types/byte/check_type
     execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.short run function iodeco:core/api/validate/predicate/types/short/check_type
     execute if data storage iodeco:core {Checked:false} if data storage iodeco:core Args.int run function iodeco:core/api/validate/predicate/types/int/check_type
