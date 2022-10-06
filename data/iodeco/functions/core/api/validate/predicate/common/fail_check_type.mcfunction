@@ -13,7 +13,7 @@
 #       Error: Error
 #           発生したエラー
 #
-# @within function iodeco:core/api/validate/predicate/types/*/check_type
+# @within function iodeco:core/api/validate/predicate/types/*/check_*
 
 # エラーを発生させる
     data modify storage iodeco:util in.Name set from storage iodeco: in.name

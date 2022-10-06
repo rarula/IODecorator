@@ -6,7 +6,7 @@
 
 
 # 実際の型と期待されている型の一致を検証する
-    data modify storage iodeco:temp Type set value "boolean"
+    data modify storage iodeco:temp Type set value "byte"
     function iodeco:core/api/validate/predicate/common/check_type
 
 # 型が一致しない -> TypeMismatchError を発生させる
@@ -19,9 +19,8 @@
     execute if data storage iodeco:temp {Matched:false} run data modify storage iodeco: out.boolean.error set from storage iodeco:util out.Error
     execute if data storage iodeco:temp {Matched:false} run function iodeco:core/util/cleanup
 
-# 型が一致する -> boolean以降の引数をコピーし、条件との合致を検証する
-    execute if data storage iodeco:temp {Matched:true} run data modify storage iodeco:core Args set from storage iodeco:core Args.boolean
-    execute if data storage iodeco:temp {Matched:true} run function iodeco:core/api/validate/predicate/types/boolean/_
+# 型が一致する -> boolean型として扱えるか検証する
+    execute if data storage iodeco:temp {Matched:true} run function iodeco:core/api/validate/predicate/types/boolean/check_boolean
 
 
 # リセット
