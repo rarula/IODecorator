@@ -8,6 +8,7 @@
 #       equal?: Collection
 #       empty?: true
 #       includes?: any[]
+#       includesAny?: any[]
 #
 # @output
 #   storage iodeco:core Predicate
@@ -17,6 +18,7 @@
 #       equal?: ValidationResult
 #       empty?: ValidationResult
 #       includes?: ValidationResult
+#       includesAny?: ValidationResult
 #
 # @within function iodeco:core/api/validate/predicate/types/*/_
 
@@ -27,6 +29,7 @@
     execute if data storage iodeco:core Args.equal run function iodeco:core/api/validate/predicate/common/collection/equal/_
     execute if data storage iodeco:core Args.empty run function iodeco:core/api/validate/predicate/common/collection/empty/_
     execute if data storage iodeco:core Args.includes run function iodeco:core/api/validate/predicate/common/collection/includes/_
+    execute if data storage iodeco:core Args.includesAny run function iodeco:core/api/validate/predicate/common/collection/includes_any/_
 
 # 戻り値を設定する
     execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate set from storage iodeco:core ValidationResult
