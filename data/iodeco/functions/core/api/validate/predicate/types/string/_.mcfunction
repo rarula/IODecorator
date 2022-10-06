@@ -3,6 +3,7 @@
 # @input
 #   storage iodeco:core Args
 #       length?: int
+#       minLength?: int
 #
 # @within function
 #   iodeco:core/api/validate/predicate/types/string/check_type
@@ -10,6 +11,7 @@
 
 # 条件との合致を検証する
     execute if data storage iodeco:core Args.length run function iodeco:core/api/validate/predicate/types/string/length/_
+    execute if data storage iodeco:core Args.minLength run function iodeco:core/api/validate/predicate/types/string/min_length/_
 
 # 戻り値を設定する
     function iodeco:core/api/validate/predicate/common/build_validation_result
