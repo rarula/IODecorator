@@ -6,6 +6,7 @@
 #       minLength?: int
 #       maxLength?: int
 #       equals?: string
+#       empty?: true
 #
 # @within function
 #   iodeco:core/api/validate/predicate/types/string/check_type
@@ -16,6 +17,7 @@
     execute if data storage iodeco:core Args.minLength run function iodeco:core/api/validate/predicate/types/string/min_length/_
     execute if data storage iodeco:core Args.maxLength run function iodeco:core/api/validate/predicate/types/string/max_length/_
     execute if data storage iodeco:core Args.equals run function iodeco:core/api/validate/predicate/types/string/equals/_
+    execute if data storage iodeco:core Args.empty run function iodeco:core/api/validate/predicate/types/string/empty/_
 
 # 戻り値を設定する
     function iodeco:core/api/validate/predicate/common/build_validation_result
