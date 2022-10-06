@@ -12,15 +12,21 @@
     execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco:core Predicate.not.length.success set value true
 
 
-# 対象の引数(配列)の長さと指定された値が一致するか検証する
-    execute store result score $Value IODecorator run data get storage iodeco: in.value[]
-    execute store result score $Length IODecorator if data storage iodeco:core Args.length
+# 検証する
+    execute store result score $Value IODecorator if data storage iodeco: in.value[]
+    execute store result score $Length IODecorator run data get storage iodeco:core Args.length
+    execute store success storage iodeco:temp Success byte 1.0 if score $Value IODecorator = $Length IODecorator
+
+# 実際に条件が反転する -> 検証の成否を反転する
+    execute if data storage iodeco:core {Inverted:true} store success storage iodeco:temp Success byte 1.0 if data storage iodeco:temp {Success:false}
+
 
 # 検証に失敗 -> ArgumentError を発生させる
-    execute unless score $Value IODecorator = $Length IODecorator run function iodeco:core/api/validate/predicate/common/collection/length/fail/_
+    execute if data storage iodeco:temp {Success:false} run function iodeco:core/api/validate/predicate/common/collection/length/fail/_
 
 
 # リセット
     scoreboard players reset $Value IODecorator
     scoreboard players reset $Length IODecorator
+    data remove storage iodeco:temp Success
     data remove storage iodeco:core Args.length
