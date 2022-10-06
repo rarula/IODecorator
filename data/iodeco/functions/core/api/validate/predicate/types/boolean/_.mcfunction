@@ -3,10 +3,7 @@
 # @input
 #   storage iodeco:core Args
 #       true?: true
-#
-# @writes
-#   storage iodeco:core ValidationResult
-#       true?: ValidationResult
+#       false?: true
 #
 # @within function
 #   iodeco:core/api/validate/predicate/types/boolean/check_boolean
@@ -14,6 +11,7 @@
 
 # 条件との合致を検証する
     execute if data storage iodeco:core Args.true run function iodeco:core/api/validate/predicate/types/boolean/true/_
+    execute if data storage iodeco:core Args.false run function iodeco:core/api/validate/predicate/types/boolean/false/_
 
 # 戻り値を設定する
     function iodeco:core/api/validate/predicate/common/build_validation_result
