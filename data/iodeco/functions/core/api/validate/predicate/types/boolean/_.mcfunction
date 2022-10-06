@@ -16,12 +16,9 @@
     execute if data storage iodeco:core Args.true run function iodeco:core/api/validate/predicate/types/boolean/true/_
 
 # 戻り値を設定する
-    execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco: out.boolean merge from storage iodeco:core ValidationResult
-    execute if data storage iodeco:core {Inverted:true } run data modify storage iodeco: out.boolean.not merge from storage iodeco:core ValidationResult
-
-# リセット
-    data remove storage iodeco:core ValidationResult
-
+    function iodeco:core/api/validate/predicate/common/build_validation_result
+    data modify storage iodeco: out.boolean merge from storage iodeco:core Predicate
+    data remove storage iodeco:core Predicate
 
 # BasePredicate
     function iodeco:core/api/validate/predicate/common/base/_
