@@ -7,6 +7,7 @@
 #       maxLength?: int
 #       equal?: Collection
 #       empty?: true
+#       includes?: any[]
 #
 # @output
 #   storage iodeco:core Predicate
@@ -15,6 +16,7 @@
 #       maxLength?: ValidationResult
 #       equal?: ValidationResult
 #       empty?: ValidationResult
+#       includes?: ValidationResult
 #
 # @within function iodeco:core/api/validate/predicate/types/*/_
 
@@ -24,6 +26,7 @@
     execute if data storage iodeco:core Args.maxLength run function iodeco:core/api/validate/predicate/common/collection/max_length/_
     execute if data storage iodeco:core Args.equal run function iodeco:core/api/validate/predicate/common/collection/equal/_
     execute if data storage iodeco:core Args.empty run function iodeco:core/api/validate/predicate/common/collection/empty/_
+    execute if data storage iodeco:core Args.includes run function iodeco:core/api/validate/predicate/common/collection/includes/_
 
 # 戻り値を設定する
     execute if data storage iodeco:core {Inverted:false} run data modify storage iodeco:core Predicate set from storage iodeco:core ValidationResult
