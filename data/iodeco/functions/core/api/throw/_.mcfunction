@@ -6,8 +6,8 @@
 #
 # @within function iodeco:api/throw
 
-# 全てのエラーを出力する
-    function iodeco:core/api/throw/loop
+# 配列の長さが1以上 -> 全てのエラーを出力する
+    execute if data storage iodeco: in.errorList[0] run function iodeco:core/api/throw/loop
 
 # リセット
     data remove storage iodeco: error
