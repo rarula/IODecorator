@@ -1,6 +1,6 @@
 #> iodeco:core/load_once
 #
-# バージョンの初回ロード時に実行される
+# 初回ロード時に実行される
 #
 # @within function iodeco:core/load
 
