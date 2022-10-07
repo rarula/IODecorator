@@ -38,17 +38,17 @@
 #
 # @within function iodeco:api/validate
 
-# 引数が省略できるかどうかフラグを立てる
+# 対象のNBTが省略できるかどうかフラグを立てる
     execute store success storage iodeco:core Optional byte 1.0 if data storage iodeco: in.optional
 
 # 検証前にフラグを立てておく
     data modify storage iodeco: out.success set value true
 
 
-# 引数が設定されていない -> 引数が省略できない -> ArgumentError を発生させる
+# 対象のNBTが設定されていない -> 対象のNBTが省略できない -> ArgumentError を発生させる
     execute unless data storage iodeco: in.value if data storage iodeco:core {Optional:false} run function iodeco:core/api/validate/fail
 
-# 引数が設定されている -> 条件を解析する
+# 対象のNBTが設定されている -> 条件を解析する
     execute if data storage iodeco: in.value if data storage iodeco:core {Optional:false} run data modify storage iodeco:core Args set from storage iodeco: in
     execute if data storage iodeco: in.value if data storage iodeco:core {Optional:true } run data modify storage iodeco:core Args set from storage iodeco: in.optional
     execute if data storage iodeco: in.value run function iodeco:core/api/validate/predicate/_

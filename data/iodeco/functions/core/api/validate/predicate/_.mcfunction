@@ -1,7 +1,7 @@
 #> iodeco:core/api/validate/predicate/_
 # @within function iodeco:core/api/validate/_
 
-# 引数の型を取得する
+# 対象のNBTの型を取得する
     data modify storage iodeco:util in.NBT set from storage iodeco: in.value
     function iodeco:core/util/nbt/get_type
     data modify storage iodeco:core ReceivedType set from storage iodeco:util out.NBTType
