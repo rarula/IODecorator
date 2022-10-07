@@ -1,13 +1,13 @@
 #> iodeco:api/validate
 #
-# 引数が指定された条件に合致するかどうかを検証します
+# NBTが指定された条件に合致するかどうかを検証します
 #
 # @input
 #   storage iodeco: in
 #       name: string
-#           対象の引数の名前
+#           対象のNBTの名前
 #       value: any
-#           対象の引数
+#           対象のNBT
 #       boolean: BooleanPredicate
 #           (いずれか) boolean型として指定する条件
 #       byte: BytePredicate

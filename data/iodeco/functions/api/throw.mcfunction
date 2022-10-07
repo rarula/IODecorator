@@ -1,11 +1,11 @@
 #> iodeco:api/throw
 #
-# 発生したエラーを出力します
+# 指定されたエラーを全て出力します
 #
 # @input
 #   storage iodeco: in
 #       errorList: Error[]
-#           発生したエラーのリスト
+#           出力するエラーのリスト
 #
 # @api
 
