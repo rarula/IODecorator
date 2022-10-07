@@ -3,6 +3,7 @@
 # @input
 #   storage iodeco:core Args
 #       equal?: compound
+#       empty?: true
 #
 # @within function
 #   iodeco:core/api/validate/predicate/types/compound/check_type
@@ -10,6 +11,7 @@
 
 # 条件との合致を検証する
     execute if data storage iodeco:core Args.equal run function iodeco:core/api/validate/predicate/types/compound/equal/_
+    execute if data storage iodeco:core Args.empty run function iodeco:core/api/validate/predicate/types/compound/empty/_
 
 # 戻り値を設定する
     function iodeco:core/api/validate/predicate/common/build_validation_result
