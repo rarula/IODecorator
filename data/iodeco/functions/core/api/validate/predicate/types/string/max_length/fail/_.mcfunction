@@ -11,7 +11,7 @@
 
 # エラーを発生させる
     data modify storage iodeco:util in.Name set from storage iodeco: in.name
-    execute store result storage iodeco:util in.Detail.value int 1.0 run scoreboard players get $Value IODecorator
+    data modify storage iodeco:util in.Detail.value set from storage iodeco: in.value
     function iodeco:core/api/validate/error/argument_error
 
 

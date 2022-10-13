@@ -7,8 +7,8 @@
 
 # エラーを発生させる
     data modify storage iodeco:util in.Name set from storage iodeco: in.name
+    data modify storage iodeco:util in.Detail.value set from storage iodeco: in.value
     execute store result storage iodeco:util in.Detail.expected int 1.0 run scoreboard players get $Length IODecorator
-    execute store result storage iodeco:util in.Detail.value int 1.0 run scoreboard players get $Value IODecorator
     function iodeco:core/api/validate/error/argument_error
 
 
