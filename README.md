@@ -38,7 +38,7 @@ function example:util
 - [定数時間でNBTのidを取得する方法とその解説](https://gist.github.com/intsuc/a798ed9c10b495d2beaf60db327fb4dd)
 
 ## 連絡
-https://twitter.com/rarula_
+<https://twitter.com/rarula_>
 
 ## ライセンス
 [CC0-1.0](LICENSE)
