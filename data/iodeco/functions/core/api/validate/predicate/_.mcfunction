@@ -1,5 +1,7 @@
 #> iodeco:core/api/validate/predicate/_
-# @within function iodeco:core/api/validate/_
+# @within function
+#   iodeco:core/api/validate/_
+#   iodeco:core/api/validate.optional/_
 
 # 対象のNBTの型を取得する
     data modify storage iodeco:util in.NBT set from storage iodeco: in.value

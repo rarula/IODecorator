@@ -1,14 +1,14 @@
-#> iodeco:api/validate
+#> iodeco:api/validate.optional
 #
 # NBTが指定された条件に合致するかどうかを検証します
-# 対象のNBTが設定されていない場合、検証は失敗します
+# 対象のNBTが設定されていない場合でも、検証は失敗しません
 #
 # @input
 #   storage iodeco: in
 #       name: string
 #           対象のNBTの名前
-#       value: any
-#           対象のNBT
+#       value?: any
+#           (省略可) 対象のNBT
 #       boolean: BooleanPredicate
 #           (いずれか) boolean型として指定する条件
 #       byte: BytePredicate
@@ -40,8 +40,6 @@
 #   storage iodeco: out
 #       success: boolean
 #           検証の成否 (条件に合致した場合は `true`、それ以外の場合は `false`)
-#       error: Error
-#           検証前に発生したエラー
 #       boolean: BooleanResult
 #           (いずれか) boolean型として検証した結果
 #       byte: ByteResult
@@ -71,4 +69,4 @@
 #
 # @api
 
-function iodeco:core/api/validate/_
+function iodeco:core/api/validate.optional/_

@@ -1,9 +1,9 @@
-#> iodeco:core/api/validate/_
+#> iodeco:core/api/validate.optional/_
 #
 # @input
 #   storage iodeco: in
 #       name: string
-#       value: any
+#       value?: any
 #       boolean: BooleanPredicate
 #       byte: BytePredicate
 #       short: ShortPredicate
@@ -21,7 +21,6 @@
 # @output
 #   storage iodeco: out
 #       success: boolean
-#       error: Error
 #       boolean: BooleanResult
 #       byte: ByteResult
 #       short: ShortResult
@@ -36,14 +35,11 @@
 #       intArray: IntArrayResult
 #       longArray: LongArrayResult
 #
-# @within function iodeco:api/validate
+# @within function iodeco:api/validate.optional
 
 # 検証前にフラグを立てておく
     data modify storage iodeco: out.success set value true
 
-
-# 対象のNBTが設定されていない -> 対象のNBTが省略できない -> ArgumentError を発生させる
-    execute unless data storage iodeco: in.value run function iodeco:core/api/validate/fail
 
 # 対象のNBTが設定されている -> 条件を解析する
     execute if data storage iodeco: in.value run data modify storage iodeco:core Args set from storage iodeco: in
