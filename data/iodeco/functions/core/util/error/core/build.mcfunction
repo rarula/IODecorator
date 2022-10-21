@@ -9,7 +9,7 @@
 #       message: TextComponent
 #           エラーメッセージ
 #       nbtName: string
-#           引数の名前
+#           NBTの名前
 #       detail?: compound
 #           (任意) エラーメッセージに使用する変数のデータ
 #

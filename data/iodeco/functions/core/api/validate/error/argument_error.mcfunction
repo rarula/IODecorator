@@ -5,7 +5,7 @@
 # @input
 #   storage iodeco:util in
 #       Name: string
-#           引数の名前
+#           NBTの名前
 #       Message: TextComponent
 #           エラーメッセージ
 #       Detail?: compound

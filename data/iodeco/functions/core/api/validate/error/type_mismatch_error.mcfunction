@@ -5,7 +5,7 @@
 # @input
 #   storage iodeco:util in
 #       Name: string
-#           引数の名前
+#           NBTの名前
 #       ExpectedType: TextComponent
 #           期待されていた型
 #       ReceivedType: string
