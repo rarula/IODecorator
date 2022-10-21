@@ -11,8 +11,9 @@
 ```mcfunction
 #> example:util
 
-data modify storage iodeco: in.name set value "input"
 data modify storage iodeco: in.value set from storage _ input
+
+data modify storage iodeco: in.name set value "input"
 data modify storage iodeco: in.string.minLength set value 5
 function iodeco:api/validate
 
@@ -38,49 +39,19 @@ function example:util
 
 ## API
 
-### iodeco:api/any
+### [any](https://github.com/rarula/IODecorator/wiki/any)
 NBTが指定された型のいずれかに一致するかどうかを検証します
 
-#### 引数
-| ストレージ | 型 | 説明 |
-| :- | :- | :- |
-| iodeco: in.name | string | 対象のNBTの名前 |
-| iodeco: in.value | any | 対象のNBT |
-| iodeco: in.types | Type[] | 期待される型のリスト |
-
-#### 戻り値
-| ストレージ | 型 | 説明 |
-| :- | :- | :- |
-| iodeco: out.success | boolean | 検証の成否 (いずれかに一致した場合は `true`、それ以外の場合は `false`) |
-| iodeco: out.error | Error | 発生したエラー |
-| iodeco: out.type | Type | 対象のNBTの型を表す文字列 |
-
-### iodeco:api/validate
+### [validate](https://github.com/rarula/IODecorator/wiki/validate)
 NBTが指定された条件に合致するかどうかを検証します
 
-#### 引数
-| ストレージ | 型 | 説明 |
-| :- | :- | :- |
-| iodeco: in.name | string | 対象のNBTの名前 |
-| iodeco: in.value | any | 対象のNBT |
-| iodeco: in.{type} | Predicate | 指定する条件 |
+### [validate.optional](https://github.com/rarula/IODecorator/wiki/validate-optional)
+NBTが指定された条件に合致するかどうかを検証します
 
-#### 戻り値
-| ストレージ | 型 | 説明 |
-| :- | :- | :- |
-| iodeco: out.success | boolean | 検証の成否 (条件に合致した場合は `true`、それ以外の場合は `false`) |
-| iodeco: out.error | Error | 発生したエラー |
-| iodeco: out.{type} | Result | 検証した結果 |
-
-### iodeco:api/throw
+### [throw](https://github.com/rarula/IODecorator/wiki/throw)
 指定されたエラーを全て出力します
 
-#### 引数
-| ストレージ | 型 | 説明 |
-| :- | :- | :- |
-| iodeco: in.errorList | Error[] | 出力するエラーのリスト |
-
-### iodeco:api/uninstall
+### [uninstall](https://github.com/rarula/IODecorator/wiki/uninstall)
 追加・変更されたスコアボードやストレージを全て削除し、導入前の状態に戻します
 
 ## その他
