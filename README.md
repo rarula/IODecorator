@@ -11,9 +11,9 @@
 ```mcfunction
 #> example:util
 
+data modify storage iodeco: in.name set value "input"
 data modify storage iodeco: in.value set from storage _ input
 
-data modify storage iodeco: in.name set value "input"
 data modify storage iodeco: in.string.minLength set value 5
 function iodeco:api/validate
 
@@ -45,8 +45,9 @@ NBTが指定された型のいずれかに一致するかどうかを検証し�
 ### [validate](https://github.com/rarula/IODecorator/wiki/validate)
 NBTが指定された条件に合致するかどうかを検証します
 
-### [validate.optional](https://github.com/rarula/IODecorator/wiki/validate-optional)
-NBTが指定された条件に合致するかどうかを検証します
+### [validate.optional](https://github.com/rarula/IODecorator/wiki/validate.optional)
+NBTが指定された条件に合致するかどうかを検証します  
+対象のNBTが設定されていない場合でも、検証は失敗しません
 
 ### [throw](https://github.com/rarula/IODecorator/wiki/throw)
 指定されたエラーを全て出力します
