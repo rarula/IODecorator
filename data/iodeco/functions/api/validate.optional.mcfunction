@@ -40,32 +40,10 @@
 #   storage iodeco: out
 #       success: boolean
 #           検証の成否 (条件に合致した場合は `true`、それ以外の場合は `false`)
-#       boolean: BooleanResult
-#           (いずれか) boolean型として検証した結果
-#       byte: ByteResult
-#           (いずれか) byte型として検証した結果
-#       short: ShortResult
-#           (いずれか) short型として検証した結果
-#       int: IntResult
-#           (いずれか) int型として検証した結果
-#       long: LongResult
-#           (いずれか) long型として検証した結果
-#       float: FloatResult
-#           (いずれか) float型として検証した結果
-#       double: DoubleResult
-#           (いずれか) double型として検証した結果
-#       byteArray: ByteArrayResult
-#           (いずれか) byteArray型として検証した結果
-#       string: StringResult
-#           (いずれか) string型として検証した結果
-#       list: ListResult
-#           (いずれか) list型として検証した結果
-#       compound: CompoundResult
-#           (いずれか) compound型として検証した結果
-#       intArray: IntArrayResult
-#           (いずれか) intArray型として検証した結果
-#       longArray: LongArrayResult
-#           (いずれか) longArray型として検証した結果
+#       {type}: Result
+#           指定した{type}の検証結果
+#       {type}.{validator}: Result
+#           指定した{validator}の検証結果
 #
 # @api
 
